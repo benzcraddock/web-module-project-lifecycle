@@ -21,6 +21,18 @@ class App extends React.Component {
       })
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    if(this.state.user !== prevState.user) {
+      axios.get(`https://api.github.com/users/${this.state.currentUser}/followers`)
+      .then(res => {
+        this.setState({
+          ...this.state,
+          followers: res.data
+        });
+      })
+    }
+  }
+
   render() {
     return(
     <div>
