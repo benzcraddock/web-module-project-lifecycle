@@ -2,15 +2,16 @@ import React from 'react';
 
 class Follower extends React.Component {
   render () {
+    const { follower } = this.props; 
     return(
       <div className="follower">
-        <img width="200px" src="https://avatars.githubusercontent.com/u/5217785?v=4"/>
-        <a href="https://github.com/mayankmmmx" target="_blank"><p>mayankmmmx</p></a>
+        <img width="200px" src={follower.avatar_url}/>
+        <a href={follower.html_url} target="_blank"><p>{follower.login}</p></a>
       </div>
       // <div className="follower">
       //   <img width="200px" src="https://avatars.githubusercontent.com/u/45055471?v=4"/>
       //   <a href="https://github.com/Jmz0127" target="_blank"><p>Jmz0127</p></a>
-      // </div>
+      // </div> 
       // <div className="follower">
       //   <img width="200px" src="https://avatars.githubusercontent.com/u/60374084?v=4"/>
       //   <a href="https://github.com/jmerz826" target="_blank"><p>jmerz826</p></a>
